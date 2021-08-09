@@ -25,7 +25,7 @@
 // Connexion à la base de données
 try
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=dardan;charset=utf8', 'root', '');
 }
 catch(Exception $e)
 {
@@ -33,7 +33,7 @@ catch(Exception $e)
 }
 
 // Récupération des 10 derniers messages
-$reponse = $bdd->query('SELECT pseudo, message FROM chat ORDER BY ID DESC LIMIT 0, 10');
+$reponse = $bdd->query('SELECT pseudo, message FROM minichat ORDER BY ID DESC LIMIT 0, 10');
 
 // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
 while ($donnees = $reponse->fetch())
